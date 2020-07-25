@@ -1,6 +1,11 @@
 .App {
   text-align: center;
 }
+$primaryColor: #bada55;
+h1,
+h2 {
+  color: $primaryColor;
+}
 
 .App-logo {
   height: 40vmin;
