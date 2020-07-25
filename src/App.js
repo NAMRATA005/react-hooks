@@ -5,11 +5,12 @@ import "./scss/style.scss";
 import HookCounter from "./components/HookCounter";
 import OptionList from "./components/OptionList";
 import "bootstrap/dist/css/bootstrap.min.css";
+import OptionListWithHooks from './components/OptionListWithHooks';
 
 function App() {
   return (
     <div className="App">
-      <OptionList />
+      <OptionListWithHooks />
       {/* <HookCounter /> */}
     </div>
   );
