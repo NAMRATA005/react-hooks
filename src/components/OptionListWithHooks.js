@@ -14,11 +14,11 @@ const OptionListWithHooks = (props) => {
   const [tertiaryList, setTertiaryList] = useState([
     { id: 1, value: "loader" },
     { id: 2, value: "responsive" },
-	]);
-	// Lists visibility
+  ]);
+  // Lists visibility
   const [isSecondaryListVisible, setIsSecondaryListVisible] = useState(false);
-	const [isTertiaryListVisible, setIsTertiaryListVisible] = useState(false);
-	// Loaders
+  const [isTertiaryListVisible, setIsTertiaryListVisible] = useState(false);
+  // Loaders
   const [isSecondaryLoaderVisible, setIsSecondaryLoaderVisible] = useState(
     false
   );
@@ -37,7 +37,10 @@ const OptionListWithHooks = (props) => {
                 type="radio"
                 onChange={(e) => onPrimaryListChange(e, item.id)}
               />
-              <label htmlFor={`radio-list-one-${item.id}`} className="radio-label">
+              <label
+                htmlFor={`radio-list-one-${item.id}`}
+                className="radio-label"
+              >
                 {item.value}
               </label>
             </li>
@@ -48,14 +51,14 @@ const OptionListWithHooks = (props) => {
   };
 
   const renderSecondaryList = () => {
-		// Check if list or loader is visible
+    // Check if list or loader is visible
     if (isSecondaryLoaderVisible || isSecondaryListVisible) {
       let secondaryListContent = <></>;
       if (isSecondaryLoaderVisible) {
-				// second Loader visible 
+        // second Loader visible
         secondaryListContent = <LoaderComp />;
       } else {
-				// Second list visible
+        // Second list visible
         secondaryListContent = (
           <>
             <h1>List two</h1>
@@ -67,7 +70,10 @@ const OptionListWithHooks = (props) => {
                   type="radio"
                   onChange={(e) => onSecondaryListChange(e, item.id)}
                 />
-                <label htmlFor={`radio-list-two-${item.id}`} className="radio-label">
+                <label
+                  htmlFor={`radio-list-two-${item.id}`}
+                  className="radio-label"
+                >
                   {item.value}
                 </label>
               </li>
@@ -80,17 +86,17 @@ const OptionListWithHooks = (props) => {
       // Nothing to render
       return <></>;
     }
-	};
-	
-	const renderTertiaryList = () => {
+  };
+
+  const renderTertiaryList = () => {
     // Check if list or loader is visible
     if (isTertiaryLoaderVisible || isTertiaryListVisible) {
       let tertiarytListContent = <></>;
       if (isTertiaryLoaderVisible) {
-				// third Loader visible 
+        // third Loader visible
         tertiarytListContent = <LoaderComp />;
       } else {
-				// third list visible
+        // third list visible
         tertiarytListContent = (
           <>
             <h1>List three</h1>
@@ -102,7 +108,10 @@ const OptionListWithHooks = (props) => {
                   type="radio"
                   onChange={(e) => onTertiaryListChange(e, item.id)}
                 />
-                <label htmlFor={`radio-list-three-${item.id}`} className="radio-label">
+                <label
+                  htmlFor={`radio-list-three-${item.id}`}
+                  className="radio-label"
+                >
                   {item.value}
                 </label>
               </li>
@@ -115,11 +124,11 @@ const OptionListWithHooks = (props) => {
       // Nothing to render
       return <></>;
     }
-	};
-	
+  };
+
   const onPrimaryListChange = (event, itemId) => {
-		// Reset third list 
-		setIsTertiaryListVisible(false);
+    // Reset third list
+    setIsTertiaryListVisible(false);
     // Initially show loader in the place of second list
     setIsSecondaryLoaderVisible(true);
     // Make a pseudo async call
@@ -141,12 +150,12 @@ const OptionListWithHooks = (props) => {
       // Make the third list visible
       setIsTertiaryListVisible(true);
     }, 2000);
-	};
-	
-	const onTertiaryListChange = (event, itemId) => {
+  };
+
+  const onTertiaryListChange = (event, itemId) => {
     // Further logic goes here
   };
-	
+
   return (
     <div className="container">
       <div className="row">
